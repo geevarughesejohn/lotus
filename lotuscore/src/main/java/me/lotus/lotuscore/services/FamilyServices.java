@@ -8,8 +8,6 @@ import me.lotus.lotuscore.entity.Person;
 
 public interface FamilyServices {
 
-	void createFamily(Person head, Address address);
-
-	void addMembers(Family family, List<Person> );
+	
 
 }
