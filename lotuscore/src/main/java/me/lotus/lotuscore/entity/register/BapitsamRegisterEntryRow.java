@@ -1,9 +1,9 @@
-package me.lotus.lotuscore.services;
+package me.lotus.lotuscore.entity.register;
 
 import java.util.Date;
 
-import me.lotus.lotuscore.entity.Address;
-import me.lotus.lotuscore.entity.Person;
+import me.lotus.lotuscore.entity.common.Address;
+import me.lotus.lotuscore.entity.common.Person;
 
 class BapitsamRegisterEntryRow extends RegisterEntryRow {
 

@@ -1,8 +1,8 @@
-package me.lotus.lotuscore.services;
+package me.lotus.lotuscore.entity.register;
 
 import java.util.Date;
 
-import me.lotus.lotuscore.entity.Family;
+import me.lotus.lotuscore.entity.common.Family;
 
 class MembershipRegisterEntryRow extends RegisterEntryRow {
 

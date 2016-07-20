@@ -1,4 +1,4 @@
-package me.lotus.lotuscore.services;
+package me.lotus.lotuscore.entity.register;
 
 import java.util.Date;
 import java.util.List;

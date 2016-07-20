@@ -1,4 +1,4 @@
-package me.lotus.lotuscore.entity;
+package me.lotus.lotuscore.entity.common;
 
 public enum Gender {
 	male, female;

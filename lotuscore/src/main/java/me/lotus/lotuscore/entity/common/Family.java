@@ -1,10 +1,10 @@
-package me.lotus.lotuscore.entity;
+package me.lotus.lotuscore.entity.common;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import me.lotus.lotuscore.services.IncomeClass;
-import me.lotus.lotuscore.services.PrayerGroup;
+import me.lotus.lotuscore.entity.register.IncomeClass;
+import me.lotus.lotuscore.entity.register.PrayerGroup;
 
 public class Family {
 	private Address address;

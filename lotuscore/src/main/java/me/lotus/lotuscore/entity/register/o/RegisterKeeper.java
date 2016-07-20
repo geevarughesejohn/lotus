@@ -1,9 +1,9 @@
-package me.lotus.lotuscore.services.o;
+package me.lotus.lotuscore.entity.register.o;
 
-import me.lotus.lotuscore.services.BapitsamRegister;
-import me.lotus.lotuscore.services.DeathRegister;
-import me.lotus.lotuscore.services.MembershipRegister;
-import me.lotus.lotuscore.services.VivahaRegister;
+import me.lotus.lotuscore.entity.register.BapitsamRegister;
+import me.lotus.lotuscore.entity.register.DeathRegister;
+import me.lotus.lotuscore.entity.register.MembershipRegister;
+import me.lotus.lotuscore.entity.register.VivahaRegister;
 
 public class RegisterKeeper {
 

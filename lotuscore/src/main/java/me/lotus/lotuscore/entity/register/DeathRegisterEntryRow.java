@@ -1,7 +1,7 @@
-package me.lotus.lotuscore.services;
+package me.lotus.lotuscore.entity.register;
 
-import me.lotus.lotuscore.entity.DeathDetails;
-import me.lotus.lotuscore.entity.Person;
+import me.lotus.lotuscore.entity.common.DeathDetails;
+import me.lotus.lotuscore.entity.common.Person;
 
 class DeathRegisterEntryRow extends RegisterEntryRow {
 
