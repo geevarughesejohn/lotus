@@ -1,6 +1,5 @@
 package me.lotus.lotuscore.entity;
 
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,20 +8,21 @@ public class Person {
 
 	private String name;
 	private Gender gender;
-	private Date dateofBirth;
+	private BirthDetails birthDetails;
 	private Education education;
 	private Occupation occupation;
+	private DeathDetails deathDetails;
 
 	private Person father;
 	private Person mother;
 	private Map<Person, List<Person>> spouseAndChildren;
 	private Family family;
 
-	Person(String name, Gender gender) {
+	public Person(String name, Gender gender) {
 		this(name, gender, -1);
 	}
 
-	Person(String name, Gender gender, int age) {
+	public Person(String name, Gender gender, int age) {
 		this.name = name;
 		this.gender = gender;
 		this.spouseAndChildren = new LinkedHashMap<Person, List<Person>>();
@@ -55,7 +55,7 @@ public class Person {
 		}
 	}
 
-	private void setParent(Person person, Person spouse) {
+	public void setParent(Person person, Person spouse) {
 		if (person.getGender() == gender.male) {
 			this.setFather(person);
 			this.setMother(spouse);
@@ -102,12 +102,8 @@ public class Person {
 		return family;
 	}
 
-	public void setDateofBirth(Date dateofBirth) {
-		this.dateofBirth = dateofBirth;
-	}
-
-	public Date getDateofBirth() {
-		return dateofBirth;
+	public void setDeathDetails(DeathDetails deathDetails) {
+		this.deathDetails = deathDetails;
 	}
 
 }

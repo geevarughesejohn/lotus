@@ -3,23 +3,28 @@ package me.lotus.lotuscore.entity;
 import java.util.LinkedList;
 import java.util.List;
 
+import me.lotus.lotuscore.services.IncomeClass;
+import me.lotus.lotuscore.services.PrayerGroup;
+
 public class Family {
 	private Address address;
-	private Person head;
-	private List<Person> members;
+	private List<Person> livingMembers;
+	private List<Person> diedMembers;
 
 	private Family parentFamily;
 	private List<Family> childFamilies;
+	private PrayerGroup prayerGroup;
+	private IncomeClass incomeClass;
 
 	public Family(Person head, Address address) {
-		this.head = head;
 		this.address = address;
-		this.members = new LinkedList<Person>();
+		this.livingMembers = new LinkedList<Person>();
+		this.livingMembers.add(0, head);
 		this.childFamilies = new LinkedList<Family>();
 	}
 
 	public void addMemeber(Person person) {
-		this.members.add(person);
+		this.livingMembers.add(person);
 		person.setFamily(this);
 	}
 
@@ -48,7 +53,7 @@ public class Family {
 	}
 
 	public Person getHead() {
-		return head;
+		return livingMembers.get(0);
 	}
 
 	public Family getParentFamily() {
@@ -60,6 +65,15 @@ public class Family {
 	}
 
 	public List<Person> getMembers() {
-		return members;
+		return livingMembers;
+	}
+
+	public void markDeath(Person person) {
+		removeMemeber(person);
+		diedMembers.add(person);
+	}
+
+	public void removeMemeber(Person person) {
+		livingMembers.remove(person);
 	}
 }
