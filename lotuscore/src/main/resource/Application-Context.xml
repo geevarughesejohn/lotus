@@ -1,0 +1,60 @@
+<beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"  
+       xmlns:tx="http://www.springframework.org/schema/tx" 
+       xmlns:mvc="http://www.springframework.org/schema/mvc" 
+       xsi:schemaLocation="  
+http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+http://www.springframework.org/schema/context  
+http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+http://www.springframework.org/schema/tx  
+http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+<!-- http://www.springframework.org/schema/mvc -->
+<!-- http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd" -->
+
+<tx:annotation-driven /> 
+    <context:annotation-config />      
+ 
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <!-- Connection properties -->
+        <property name="driverClass" value="${db.driver}" />
+        <property name="jdbcUrl" value="${db.url}" />
+        <property name="user" value="${db.user}" />
+        <property name="password" value="${db.pass}" />
+        <!-- Pool properties -->
+        <property name="minPoolSize" value="${db.minPoolSize}" />
+        <property name="maxPoolSize" value="${db.maxPoolSize}" />
+        <property name="maxStatements" value="50" />
+        <property name="idleConnectionTestPeriod" value="3000" />
+        <property name="loginTimeout" value="300" />
+    </bean>
+    <bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="location" value="/properties/application.properties"/>
+</bean>
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" /> 
+        <property name="packagesToScan">
+            <value>me.lotus.lotuscore.entity</value>
+        </property>           
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${db.dialect}</prop>               
+            </props>
+        </property>        
+    </bean> 
+    
+    <bean id="transactionManager"  
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">  
+        <property name="sessionFactory" ref="sessionFactory" />  
+    </bean> 
+    <bean id="loginDao" class="me.lotus.lotusscore.dao.impl.LoginDAOImpl" >
+   </bean> 
+     <bean id="LoginService" class="me.lotus.lotuscore.services.impl.LoginServiceImpl" >
+   </bean> 
+    
+</beans>  
+ 
+    
