@@ -1,8 +1,6 @@
-package me.lotus.lotuscore.entity.register;
+package me.lotus.lotuscore.entity.common;
 
 import java.util.List;
-
-import me.lotus.lotuscore.entity.common.Family;
 
 public class PrayerGroup {
 

@@ -3,9 +3,6 @@ package me.lotus.lotuscore.entity.common;
 import java.util.LinkedList;
 import java.util.List;
 
-import me.lotus.lotuscore.entity.register.IncomeClass;
-import me.lotus.lotuscore.entity.register.PrayerGroup;
-
 public class Family {
 	private Address address;
 	private List<Person> livingMembers;
